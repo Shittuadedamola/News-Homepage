@@ -110,7 +110,7 @@
         </div>
     </section>
 
-    <aside id="navigation" class="h-[100vh] w-[70vw] absolute bg-white top-0 right-0 px-7 py-7 hidden">
+    <aside id="navigation" class="h-[100vh] w-[70vw] absolute bg-white top-0 right-0 px-7 py-7 z-50 hidden">
         <h1 id="cancelNavigation" class="text-5xl absolute right-[20px]">X</h1>
         <div class="flex flex-col h-[300px] justify-between mt-[150px]">
             <a href="" class="text-2xl">Home</a>
@@ -121,18 +121,23 @@
         </div>
     </aside>
 
-
+    <div id="overlay"
+        class="hidden fixed inset-0 bg-black/50 z-40">
+    </div>
 
     <script>
+        const overlay = document.getElementById("overlay");
         const ham = document.getElementById("hamburger");
         const navigation = document.getElementById("navigation")
         const cancelNavigation = document.getElementById("cancelNavigation");
 
         ham.addEventListener('click', () =>{
             navigation.classList.toggle("hidden");
+            overlay.classList.toggle("hidden")
         })
         cancelNavigation.addEventListener('click', () =>{
             navigation.classList.toggle("hidden");
+            overlay.classList.toggle("hidden")
         })
     </script>
 </body>
